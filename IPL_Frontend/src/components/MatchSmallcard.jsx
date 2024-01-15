@@ -16,5 +16,4 @@ export const MatchSmallCard = ({match, teamName}) => {
         <p>{match.matchWinner} won by {match.resultMargin} {match.result}</p>
         </div>
     )
-    
 }
