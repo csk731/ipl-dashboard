@@ -4,6 +4,7 @@ import { MatchSmallCard } from '../components/MatchSmallcard';
 import { useParams } from 'react-router-dom';
 import './TeamPage.scss';
 import { PieChart } from 'react-minimal-pie-chart';
+import { Link } from 'react-router-dom';
 
 export const TeamPage = () => {
   const [team, setTeam] = useState([]);
@@ -39,13 +40,16 @@ export const TeamPage = () => {
 
         </div>
         <div className='match-details-card'>
+          <h2>Latest Matches</h2>
           <MatchDetailCard match={team.matches[0]} teamName={team.teamName} />
         </div>
             {team.matches.slice(1).map((match) => (
                 <MatchSmallCard key={match.id} teamName={team.teamName} match={match} />
             ))}
           <div className='more-link'>
-            <a href='#'>More > </a>
+            <a href='#'>
+              <Link to={`/team/${teamName}/matches/${import.meta.env.VITE_APP_DATA_END_YEAR}`}> More &gt; </Link>
+              </a>
           </div>
     </div>
   );

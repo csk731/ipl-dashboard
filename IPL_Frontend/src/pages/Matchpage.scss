@@ -1,0 +1,15 @@
+.MatchPage{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-column-gap: 10px;
+    margin-top: 20px;
+    .year-selector{
+        margin-top: 60px;
+    }
+    .matches-list{
+        .matches-list-heading{
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+    }
+}

@@ -8,8 +8,12 @@
         font-weight: 900;
         margin-bottom: 20px;
     }
-    .match-date, .match-venue, .match-result{
+    .match-date, .match-venue{
         margin-top: 10px;
+    }
+    .match-result{
+        margin-top: 20px;
+        text-transform: uppercase;
     }
     .additional-detail{
         text-align: right;

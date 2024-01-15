@@ -1,7 +1,7 @@
 .TeamPage{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 1fr 0.5fr;
     grid-column-gap: 10px;
     grid-row-gap: 10px;
 
@@ -16,10 +16,13 @@
     .wins-losses-section{
         justify-self: center;
         text-align: center;
-        padding: 40px;
+        padding: 80px;
     }
     .match-details-card{
         grid-column: span 4;
+        & > h2{
+            margin-bottom: 15px;
+        }
     }
     .more-link{
         align-self: center;
