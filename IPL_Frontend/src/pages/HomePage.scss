@@ -1,0 +1,30 @@
+.HomePage{
+    .team-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        
+        & > div{
+            padding: 10px;
+            :hover{
+                background-color: #404040;
+            }
+        }
+    }
+    .header-section{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        .app-name{
+            font-size: 3rem;
+            font-weight: 900;
+            text-align: center;
+        }
+    }
+    .team-list-heading{
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+}
