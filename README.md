@@ -2,6 +2,9 @@
 
 Welcome..!
 
+https://github.com/csk731/ipl-dashboard/assets/58213944/2660b261-ca85-4a1a-bdbe-b7d9b4c64ae7
+
+
 ## Frontend
 
 The frontend of IPL_Hub is built using modern web technologies such as HTML, CSS, JavaScript and React. It provides a user-friendly interface for accessing and interacting with IPL-related data, including match information, team information and more.
