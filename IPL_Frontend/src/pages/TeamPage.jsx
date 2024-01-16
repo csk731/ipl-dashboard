@@ -7,18 +7,29 @@ import { PieChart } from 'react-minimal-pie-chart';
 import { Link } from 'react-router-dom';
 
 export const TeamPage = () => {
-  const [team, setTeam] = useState([]);
 
+  const [team, setTeam] = useState(null);
   const { teamName } = useParams();
 
   useEffect(() => {
     const fetchMatches = async () => {
-      const response = await fetch(`http://localhost:8080/team/${teamName}`);
-      const data = await response.json();
-      setTeam(data);
+      try{
+        const response = await fetch(`http://localhost:8080/team/${teamName}`);
+        const data = await response.json();
+        setTeam(data);
+      }
+      catch(error){
+        console.error('Error fetching team:', error);
+        setTeam({teamName:null});
+      }
     };
     fetchMatches();
   }, [teamName]);
+
+
+  if (team === null) {
+    return <p className='loading'>Loading...</p>;
+  }
 
   if (!team || !team.teamName) {
     return <h1>Team not found</h1>;
@@ -47,9 +58,9 @@ export const TeamPage = () => {
                 <MatchSmallCard key={match.id} teamName={team.teamName} match={match} />
             ))}
           <div className='more-link'>
-            <a href='#'>
+            <div href='#'>
               <Link to={`/team/${teamName}/matches/${import.meta.env.VITE_APP_DATA_END_YEAR}`}> More &gt; </Link>
-              </a>
+              </div>
           </div>
     </div>
   );

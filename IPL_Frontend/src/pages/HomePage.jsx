@@ -24,7 +24,7 @@ export const HomePage = () => {
                 <h3>Select a team to see the latest matches</h3>
             </div>
             <div className="team-grid">
-                {teams.map(team=> <div key={team}><TeamTile teamName={team.teamName}/></div>)}
+                {teams.map(team=> <div key={team.id}><TeamTile teamName={team.teamName}/></div>)}
             </div>
        </div>
     )

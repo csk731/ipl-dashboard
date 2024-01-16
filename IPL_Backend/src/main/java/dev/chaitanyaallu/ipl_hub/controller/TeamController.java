@@ -12,6 +12,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,6 +37,12 @@ public class TeamController {
         }
         team.setMatches(matchRepository.findLatestMatches(teamName,4));
         return team;
+    }
+
+    @GetMapping("/teams")
+    public Iterable<Team> getAllTeams(){
+        List<Team> teams=teamRepository.findAll();
+        return teams;
     }
 
     @GetMapping("/team/{teamName}/matches")
